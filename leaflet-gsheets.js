@@ -33,8 +33,10 @@ if (navigator.geolocation) {
   }
   
 function setPosition(position) {
-  lat = position.coords.latitude.toString();		//find latitude
-  lng = position.coords.longitude.toString();		//find lognitude
+  //lat = position.coords.latitude.toString();		//find latitude
+  //lng = position.coords.longitude.toString();		//find lognitude
+  lat = position.coords.latitude;		//find latitude
+  lng = position.coords.longitude;		//find lognitude
   
 }
 
