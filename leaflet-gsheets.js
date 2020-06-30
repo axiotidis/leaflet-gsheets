@@ -1,4 +1,5 @@
-
+var lat=0;
+var lng=0;
 /* global L Tabletop */
 
 /*
@@ -24,8 +25,7 @@ function init() {
 }
 window.addEventListener("DOMContentLoaded", init);
 
-var lat;
-var lng;
+
 
 //geolocation
 if (navigator.geolocation) {
