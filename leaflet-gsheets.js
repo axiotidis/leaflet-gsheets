@@ -37,14 +37,15 @@ function setPosition(position) {
   //lng = position.coords.longitude.toString();		//find lognitude
   lat = position.coords.latitude;		//find latitude
   lng = position.coords.longitude;		//find lognitude
-  alert("current lat= "+lat+" ,current lng= "+lng)
+  //alert("current lat= "+lat+" ,current lng= "+lng)
+  // Create a new Leaflet map centered on the point found by geolocation
+  var map = L.map("map").setView([lat, lng], 4);
 }
 
 // Create a new Leaflet map centered on the continental US
 //var map = L.map("map").setView([40, -100], 4);
 
-// Create a new Leaflet map centered on the point found by geolocation
-var map = L.map("map").setView([lat, lng], 4);
+
 
 // This is the Carto Positron basemap
 var basemap = L.tileLayer(
