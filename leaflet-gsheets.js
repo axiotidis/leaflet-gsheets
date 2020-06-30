@@ -1,7 +1,3 @@
-var lat=0;
-var lng=0;
-
-
 
 /* global L Tabletop */
 
@@ -25,23 +21,7 @@ function init() {
 
   Tabletop.init({ key: polyURL, callback: addPolygons, simpleSheet: true });
   Tabletop.init({ key: pointsURL, callback: addPoints, simpleSheet: true }); // simpleSheet assumes there is only one table and automatically sends its data
-    
-  //geolocation
-if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(setPosition);
-  }
-  
-
 }
-function setPosition(position) {
-  //lat = position.coords.latitude.toString();		//find latitude
-  //lng = position.coords.longitude.toString();		//find lognitude
-  lat = position.coords.latitude;		//find latitude
-  lng = position.coords.longitude;		//find lognitude
-  //alert("current lat= "+lat+" ,current lng= "+lng)
-  
-}
-
 window.addEventListener("DOMContentLoaded", init);
 
 
@@ -49,10 +29,9 @@ window.addEventListener("DOMContentLoaded", init);
 
 
 // Create a new Leaflet map centered on the continental US
-//var map = L.map("map").setView([40, -100], 4);
+var map = L.map("map").setView([40, -100], 4);
 
-// Create a new Leaflet map centered on the point found by geolocation
-var map = L.map("map").setView([lat, lng], 4);
+
 
 // This is the Carto Positron basemap
 var basemap = L.tileLayer(
