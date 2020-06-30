@@ -1,5 +1,20 @@
 var lat=0;
 var lng=0;
+
+//geolocation
+if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(setPosition);
+  }
+  
+function setPosition(position) {
+  //lat = position.coords.latitude.toString();		//find latitude
+  //lng = position.coords.longitude.toString();		//find lognitude
+  lat = position.coords.latitude;		//find latitude
+  lng = position.coords.longitude;		//find lognitude
+  //alert("current lat= "+lat+" ,current lng= "+lng)
+  
+}
+
 /* global L Tabletop */
 
 /*
@@ -27,19 +42,7 @@ window.addEventListener("DOMContentLoaded", init);
 
 
 
-//geolocation
-if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(setPosition);
-  }
-  
-function setPosition(position) {
-  //lat = position.coords.latitude.toString();		//find latitude
-  //lng = position.coords.longitude.toString();		//find lognitude
-  lat = position.coords.latitude;		//find latitude
-  lng = position.coords.longitude;		//find lognitude
-  //alert("current lat= "+lat+" ,current lng= "+lng)
-  
-}
+
 
 // Create a new Leaflet map centered on the continental US
 //var map = L.map("map").setView([40, -100], 4);
