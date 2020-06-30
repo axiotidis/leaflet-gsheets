@@ -37,7 +37,7 @@ function setPosition(position) {
   //lng = position.coords.longitude.toString();		//find lognitude
   lat = position.coords.latitude;		//find latitude
   lng = position.coords.longitude;		//find lognitude
-  
+  alert("current lat= "+lat+" ,current lng= "+lng)
 }
 
 // Create a new Leaflet map centered on the continental US
