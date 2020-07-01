@@ -28,8 +28,8 @@ window.addEventListener("DOMContentLoaded", init);
 navigator.geolocation.getCurrentPosition(success);
 function success(){
 	
-	var lat = position.coords.latitude.toString();		//find latitude
-	var lng = position.coords.longitude.toString();		//find lognitude
+	var lat = position.coords.latitude;		//find latitude
+	var lng = position.coords.longitude;		//find lognitude
 
 	// Create a new Leaflet map centered on the continental US
 	var map = L.map("map").setView([lat, lng], 4);
