@@ -33,7 +33,7 @@ function success(position){
 	lng = position.coords.longitude;		//find lognitude
 
 	// Create a new Leaflet map centered on the geolocation
-	var map = L.map("map").setView([lat, lng], 10);
+	var map = L.map("map").setView([lat, lng], 10); //latitude, lognitude, zoom level
 
 
 
