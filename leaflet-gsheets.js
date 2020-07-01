@@ -25,13 +25,15 @@ function init() {
 window.addEventListener("DOMContentLoaded", init);
 
 
-navigator.geolocation.getCurrentPosition();
-var lat = position.coords.latitude.toString();		//find latitude
-var lng = position.coords.longitude.toString();		//find lognitude
+navigator.geolocation.getCurrentPosition(success);
+function success(){
+	
+	var lat = position.coords.latitude.toString();		//find latitude
+	var lng = position.coords.longitude.toString();		//find lognitude
 
-// Create a new Leaflet map centered on the continental US
-var map = L.map("map").setView([lat, lng], 4);
-
+	// Create a new Leaflet map centered on the continental US
+	var map = L.map("map").setView([lat, lng], 4);
+}
 
 
 // This is the Carto Positron basemap
