@@ -33,8 +33,8 @@ function success(position){
 	lat = position.coords.latitude;		//find latitude
 	lng = position.coords.longitude;		//find lognitude
 
-	// Create a new Leaflet map centered on the continental US
-	var map = L.map("map").setView([lat, lng], 4);
+	// Create a new Leaflet map centered on the geolocation
+	var map = L.map("map").setView([lat, lng], 10);
 
 
 
