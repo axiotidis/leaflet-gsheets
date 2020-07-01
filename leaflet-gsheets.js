@@ -24,8 +24,10 @@ function init() {
 }
 window.addEventListener("DOMContentLoaded", init);
 
+if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(success);
+  }
 
-navigator.geolocation.getCurrentPosition(success);
 function success(){
 	
 	var lat = position.coords.latitude;		//find latitude
