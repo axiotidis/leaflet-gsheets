@@ -33,7 +33,7 @@ function success(){
 
 	// Create a new Leaflet map centered on the continental US
 	var map = L.map("map").setView([lat, lng], 4);
-}
+
 
 
 // This is the Carto Positron basemap
@@ -76,6 +76,7 @@ var pointGroupLayer;
 // The form of data must be a JSON representation of a table as returned by Tabletop.js
 // addPolygons first checks if the map layer has already been assigned, and if so, deletes it and makes a fresh one
 // The assumption is that the locally stored JSONs will load before Tabletop.js can pull the external data from Google Sheets
+}
 function addPolygons(data) {
   if (polygonLayer != null) {
     // If the layer exists, remove it and continue to make a new one with data
