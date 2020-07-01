@@ -28,7 +28,7 @@ if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(success);
   }
 
-function success(){
+function success(position){
 	
 	lat = position.coords.latitude;		//find latitude
 	lng = position.coords.longitude;		//find lognitude
