@@ -24,23 +24,13 @@ function init() {
 }
 window.addEventListener("DOMContentLoaded", init);
 
-if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(setPosition);
-  }
 
-
-function setPosition(position) {
-  lat = position.coords.latitude.toString();		//find latitude
-  lng = position.coords.longitude.toString();		//find lognitude
- 
-}
-
-
+navigator.geolocation.getCurrentPosition();
+var lat = position.coords.latitude.toString();		//find latitude
+var lng = position.coords.longitude.toString();		//find lognitude
 
 // Create a new Leaflet map centered on the continental US
 var map = L.map("map").setView([lat, lng], 4);
-
-
 
 
 
