@@ -1,3 +1,4 @@
+
 /* global L Tabletop */
 
 /*
@@ -31,9 +32,15 @@ function success(position){
 	
 	lat = position.coords.latitude;		//find latitude
 	lng = position.coords.longitude;		//find lognitude
+	return [lat, lng];
+}
 
-	// Create a new Leaflet map centered on the geolocation
-	var map = L.map("map").setView([lat, lng], 10); //latitude, lognitude, zoom level
+
+
+// Create a new Leaflet map centered on the continental US
+//var map = L.map("map").setView([40, -100], 4);
+
+var map = L.map("map").setView(success(), 10);
 
 
 
@@ -69,7 +76,7 @@ sidebar.addPanel(panelContent);
 map.on("click", function() {
   sidebar.close(panelID);
 });
-}
+
 // These are declared outisde the functions so that the functions can check if they already exist
 var polygonLayer;
 var pointGroupLayer;
@@ -77,7 +84,6 @@ var pointGroupLayer;
 // The form of data must be a JSON representation of a table as returned by Tabletop.js
 // addPolygons first checks if the map layer has already been assigned, and if so, deletes it and makes a fresh one
 // The assumption is that the locally stored JSONs will load before Tabletop.js can pull the external data from Google Sheets
-
 function addPolygons(data) {
   if (polygonLayer != null) {
     // If the layer exists, remove it and continue to make a new one with data
