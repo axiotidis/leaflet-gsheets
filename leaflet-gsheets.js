@@ -40,7 +40,7 @@ function success(position){
 // Create a new Leaflet map centered on the continental US
 //var map = L.map("map").setView([40, -100], 4);
 
-var map = L.map("map").setView(success(), 10);
+var map = L.map("map").setView(success(position), 10);
 
 
 
