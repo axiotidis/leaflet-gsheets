@@ -4,7 +4,7 @@
  * Script to display two tables from Google Sheets as point and polygon layers using Leaflet
  * The Sheets are then imported using Tabletop.js and overwrite the initially laded layers
  */
-
+var map;
 // init() is called as soon as the page loads
 function init() {
   // PASTE YOUR URLs HERE
@@ -33,7 +33,7 @@ function success(position){
 	lng = position.coords.longitude;		//find lognitude
 
 	// Create a new Leaflet map centered on the geolocation
-	var map = L.map("map").setView([lat, lng], 10);
+	map = L.map("map").setView([lat, lng], 10);
 
 
 
